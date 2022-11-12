@@ -1,0 +1,106 @@
+@import url(pre-game.css);
+
+@font-face {
+    font-family: 'stardew-valley';
+    src: url(stardew-valley.ttf) format('truetype');
+}
+
+:root {
+    --header-and-footer-color: #F2AB27;
+    --main-color: #BF7C2A;
+    --button-start-game-color: #B52121;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--main-color);
+    height: 100vh;
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+header {
+    background-color: var(--header-and-footer-color);
+    height: 100%;
+    max-height: 10%;
+    width: 100%;
+    font-family: 'stardew-valley';
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-color: var(--main-color);
+    height: 100%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+main.click {
+    max-height: 76.8%;
+}
+
+#button-start-game {
+    background-color: var(--button-start-game-color);
+    height: 6rem;
+    width: 22rem;
+    border-radius: 2rem;
+    font-family: 'stardew-valley';
+    font-size: 4rem;
+    transition: 1s;
+}
+
+#button-start-game:hover {
+    transition: 1s;
+    height: 7rem;
+    width: 25rem;
+    font-size: 5rem; 
+}
+
+footer {
+    background-color: var(--header-and-footer-color);
+    height: 100%;
+    max-height: 10%;
+    width: 100%;
+    font-family: 'stardew-valley';
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer.click {
+    margin-top: 10rem;
+}
+
+#github-logo-footer {
+    height: 5rem;
+    width: 5rem;
+    transition: 0.8s;
+}
+
+#github-logo-footer:hover {
+    transform: rotate(360deg);
+    transition: 0.8s;
+}
