@@ -1,10 +1,9 @@
-@import url(selected-character.css);
-
 :root {
     --box-margin-color: #55A61C;
     --box-container-background-color: #6B3710;
     --font-color: black;
     --font-hover-color: #771010;
+    --box-margin-hover-color: red;
 }
 
 #choose-title {
@@ -34,10 +33,6 @@
 #container-1 h2 {
     font-family: 'stardew-valley';
     font-size: 4.5rem;
-}
-
-.c1 {
-    width: 23rem;
 }
 
 .c5 {
@@ -84,7 +79,12 @@
 
 .img:hover {
     transition: 0.6s;
-    opacity: 0.7;
-    border: solid var(--font-hover-color) 0.6rem;
-    cursor: pointer;
+    opacity: 0.75;
+    border: solid var(--box-margin-hover-color) 0.6rem;
+    cursor: url(img/hand-cursor.png), auto;
+}
+
+.img.selected {
+    opacity: 0.75;
+    border: solid var(--box-margin-hover-color) 0.6rem;
 }
