@@ -88,3 +88,18 @@
     opacity: 0.75;
     border: solid var(--box-margin-hover-color) 0.6rem;
 }
+
+#button-fight {
+    background-color: var(--button-start-game-color);
+    height: 6rem;
+    width: 30rem;
+    border-radius: 2rem;
+    font-family: 'stardew-valley';
+    font-size: 4rem;
+    transition: 1s;
+}
+
+#button-fight:hover {
+    transition: 1s;
+    transform: scale(1.1);
+}

@@ -38,6 +38,19 @@ function selectedCharacter(element) {
 }
 
 
+const buttonFight = document.querySelector('#button-fight')
+buttonFight.addEventListener('click', callGame)
+
+const game = document.querySelector('#game')
+game.style.display = 'none'
+
+function callGame() {
+    chooseTitle.style.display = 'none'
+    container.style.display = 'none'
+    game.style.display = 'flex'
+}
+
+
 function resetGame() {
     location.reload()
 }

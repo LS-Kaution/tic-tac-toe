@@ -1,4 +1,5 @@
 @import url(pre-game.css);
+@import url(game.css);
 
 @font-face {
     font-family: 'stardew-valley';
@@ -73,9 +74,7 @@ main.click {
 
 #button-start-game:hover {
     transition: 1s;
-    height: 7rem;
-    width: 25rem;
-    font-size: 5rem; 
+    transform: scale(1.1);
 }
 
 footer {
