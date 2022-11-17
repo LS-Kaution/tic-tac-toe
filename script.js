@@ -50,6 +50,16 @@ function callGame() {
     game.style.display = 'flex'
 }
 
+let character = 'X'
+
+document.querySelectorAll('.box-game').forEach((element) => {
+    element.addEventListener('click', () => {
+        if(element.innerHTML === "") {
+            element.innerHTML = character
+            character = character === "X" ? "O" : "X"
+        }
+    })
+})
 
 function resetGame() {
     location.reload()

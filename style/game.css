@@ -8,10 +8,55 @@
 
 #game-container {
     display: grid;
-    grid-template: 20rem 20rem 20rem / 20rem 20rem 20rem;
+    grid-template: 15rem 15rem 15rem / 15rem 15rem 15rem;
 }
 
 .box-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    border: solid black 0.2rem;
+    font-family: 'stardew-valley';
+    font-size: 8rem;
+}
+
+.cg1 {
+    border-bottom: solid black 0.2rem;
+    border-right: solid black 0.2rem;
+}
+
+
+.cg2 {
+    border-bottom: solid black 0.2rem;
+    border-right: solid black 0.2rem;
+}
+
+
+.cg3 {
+    border-bottom: solid black 0.2rem;
+}
+
+.cg4 {
+    border-bottom: solid black 0.2rem;
+    border-right: solid black 0.2rem;
+}
+
+
+.cg5 {
+    border-bottom: solid black 0.2rem;
+    border-right: solid black 0.2rem;
+}
+
+
+.cg6 {
+    border-bottom: solid black 0.2rem;
+}
+
+.cg7 {
+    border-right: solid black 0.2rem;
+}
+
+
+.cg8 {
+    border-right: solid black 0.2rem;
 }
