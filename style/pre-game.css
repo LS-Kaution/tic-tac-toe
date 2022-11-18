@@ -70,21 +70,26 @@
     transition: 1s;
 }
 
-.img {
+.img-x, .img-o {
     height: 19.8rem;
     width: 19.8rem;
     border: solid var(--box-margin-color) 0.3rem;
     transition: 0.6s;
 }
 
-.img:hover {
+.img-x:hover, .img-o:hover {
     transition: 0.6s;
     opacity: 0.75;
     border: solid var(--box-margin-hover-color) 0.6rem;
     cursor: url(img/hand-cursor.png), auto;
 }
 
-.img.selected {
+.img-x.selected {
+    opacity: 0.75;
+    border: solid var(--box-margin-hover-color) 0.6rem;
+}
+
+.img-o.selected {
     opacity: 0.75;
     border: solid var(--box-margin-hover-color) 0.6rem;
 }

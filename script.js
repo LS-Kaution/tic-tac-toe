@@ -1,19 +1,30 @@
 const header = document.querySelector('header')
 const footer = document.querySelector('footer')
 const main = document.querySelector('main')
+const imgx = document.querySelectorAll('.img-x')
+const imgo = document.querySelectorAll('.img-o')
 
-const imgs = document.querySelectorAll('.img')
+
+let farmerX = null
+let farmerO = null
 
 
-for(const img of imgs) {
+for(const img of imgx) {
     img.addEventListener('click', () => {
-        selectedCharacter(img)
+        selectedCharacterX(img)
+    }) 
+}
+
+for(const img of imgo) {
+    img.addEventListener('click', () => {
+        selectedCharacterO(img)
     }) 
 }
 
 
 const buttonStartGame = document.querySelector('#button-start-game')
 buttonStartGame.addEventListener('click', callPreGame)
+
 
 const chooseTitle = document.querySelector('#choose-title')
 chooseTitle.style.display = 'none'
@@ -33,10 +44,35 @@ function callPreGame() {
 } 
 
 
-function selectedCharacter(element) {
-    element.classList.toggle('selected')
+function selectedCharacterX(element) {  
+    unselectCharacterX(farmerX)
+    farmerX = element
+    element.classList.add('selected')
+    printCharacterX(farmerX)   
 }
 
+function printCharacterX(img) {
+    img.innerHTML
+}
+
+function unselectCharacterX(selectedFarmer) {
+    if(selectedFarmer !== null ) {
+        selectedFarmer.classList.remove('selected')
+    }
+}
+
+
+function selectedCharacterO(element) {  
+    unselectCharacterO(farmerO)
+    farmerO = element
+    element.classList.add('selected')   
+}
+
+function unselectCharacterO(selectedFarmer) {
+    if(selectedFarmer !== null ) {
+        selectedFarmer.classList.remove('selected')
+    }
+}
 
 const buttonFight = document.querySelector('#button-fight')
 buttonFight.addEventListener('click', callGame)
@@ -44,13 +80,19 @@ buttonFight.addEventListener('click', callGame)
 const game = document.querySelector('#game')
 game.style.display = 'none'
 
+const selectedCharacters = document.querySelector('#selected-characters')
+selectedCharacters.style.display = 'none'
+
 function callGame() {
     chooseTitle.style.display = 'none'
     container.style.display = 'none'
+    footer.style.display = 'none'
     game.style.display = 'flex'
+    selectedCharacters.style.display = 'flex'
 }
 
 let character = 'X'
+
 
 document.querySelectorAll('.box-game').forEach((element) => {
     element.addEventListener('click', () => {

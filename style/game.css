@@ -1,9 +1,12 @@
 #game {
     height: 100%;
     width: 90%;
-    margin-top: 6.5rem;
+    margin-top: 20rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
 }
 
 #game-container {
@@ -59,4 +62,29 @@
 
 .cg8 {
     border-right: solid black 0.2rem;
+}
+
+#selected-characters {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+#selected-characters figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'stardew-valley';
+    font-size: 6rem;
+}
+
+#selected-characters figure div {
+    height: 20rem;
+    width: 20rem;
+    border: solid black 0.3rem;
 }
