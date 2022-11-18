@@ -83,8 +83,44 @@
     font-size: 6rem;
 }
 
-#selected-characters figure div {
+#selected-characters figure img {
     height: 20rem;
     width: 20rem;
-    border: solid black 0.3rem;
+}
+
+#selected-charactersX {
+    border: solid #55A61C 0.3rem;
+}
+
+#selected-charactersO {
+    border: solid red 0.3rem;
+}
+
+.img-size {
+    height: 14rem;
+    width: 14rem;
+    
+}
+
+.X {
+    border: solid #55A61C 0.3rem;
+}
+
+.O {
+    border: solid red 0.3rem;
+}
+
+#button-reset {
+background-color: var(--button-start-game-color);
+height: 6rem;
+width: 15rem;
+border-radius: 2rem;
+font-family: 'stardew-valley';
+font-size: 4rem;
+transition: 1s;
+}
+
+#button-reset:hover {
+transition: 1s;
+transform: scale(1.1);
 }

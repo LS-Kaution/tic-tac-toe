@@ -48,12 +48,10 @@ function selectedCharacterX(element) {
     unselectCharacterX(farmerX)
     farmerX = element
     element.classList.add('selected')
-    printCharacterX(farmerX)   
+
+    printCharacter(farmerX, document.querySelector('#selected-charactersX'))
 }
 
-function printCharacterX(img) {
-    img.innerHTML
-}
 
 function unselectCharacterX(selectedFarmer) {
     if(selectedFarmer !== null ) {
@@ -62,10 +60,17 @@ function unselectCharacterX(selectedFarmer) {
 }
 
 
+function printCharacter(source, target) {
+    target.src = source.src
+}
+
+
 function selectedCharacterO(element) {  
     unselectCharacterO(farmerO)
     farmerO = element
     element.classList.add('selected')   
+
+    printCharacter(farmerO, document.querySelector('#selected-charactersO'))
 }
 
 function unselectCharacterO(selectedFarmer) {
@@ -75,13 +80,21 @@ function unselectCharacterO(selectedFarmer) {
 }
 
 const buttonFight = document.querySelector('#button-fight')
-buttonFight.addEventListener('click', callGame)
+buttonFight.addEventListener('click', () => {
+    if(farmerX === null || farmerO === null) {
+        alert('Please choose a character for each side')
+    }
+
+    else {
+        callGame()
+    }
+})
 
 const game = document.querySelector('#game')
 game.style.display = 'none'
 
 const selectedCharacters = document.querySelector('#selected-characters')
-selectedCharacters.style.display = 'none'
+selectedCharacters.style.display = 'hidden'
 
 function callGame() {
     chooseTitle.style.display = 'none'
@@ -91,17 +104,36 @@ function callGame() {
     selectedCharacters.style.display = 'flex'
 }
 
-let character = 'X'
-
+let previousTurn = null
+let currentTurn = null
 
 document.querySelectorAll('.box-game').forEach((element) => {
     element.addEventListener('click', () => {
+        let X = `<img src="${farmerX.src}" class="img-size X">`
+        let O = `<img src="${farmerO.src}" class="img-size O">`
+        
         if(element.innerHTML === "") {
-            element.innerHTML = character
-            character = character === "X" ? "O" : "X"
+            if(previousTurn === null) {
+                let turn = X
+                currentTurn = turn
+            }
+            
+            element.innerHTML = currentTurn
+            previousTurn = currentTurn
+            
+            if(previousTurn === X) {
+                currentTurn = O
+            }
+            
+            else {
+                currentTurn = X
+            }
         }
     })
 })
+
+const reset = document.querySelector('#button-reset')
+reset.addEventListener('click', resetGame)
 
 function resetGame() {
     location.reload()
